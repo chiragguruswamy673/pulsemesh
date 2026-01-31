@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cassandra
+  namespace: pulsemesh-system
+  labels:
+    app: cassandra
+spec:
+  clusterIP: None        # 👈 Headless service (IMPORTANT)
+  selector:
+    app: cassandra
+  ports:
+  - port: 9042
+    name: cql

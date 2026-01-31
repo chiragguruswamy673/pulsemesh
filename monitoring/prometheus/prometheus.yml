@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "pulsemesh"
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - pulsemesh-app.pulsemesh-system.svc.cluster.local:8000
